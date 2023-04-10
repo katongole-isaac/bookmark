@@ -1,5 +1,5 @@
 import React from "react";
-import IllustrationImage from "../manage/images/illustration-intro.svg";
+import IllustrationImage from "../bookmark/images/illustration-hero.svg";
 export default function Intro() {
   return (
     <div className="intro-wrapper">
@@ -8,12 +8,16 @@ export default function Intro() {
           <img src={IllustrationImage} alt="illustration-intro.svg" />
         </div>
         <div className="intro-content">
-          <h1>Bring everyone together to build better products.</h1>
+          <h1>A Simple Bookmark Manager</h1>
           <p>
-            Manage makes it simple for software teams to plan day-to-day tasks
-            while keeping the larger teams goals in view.
+            A clean and simple interface to organize your favourite websites.
+            Open a new browser tab and see your sites load instantly. Try it for
+            free.
           </p>
-          <button> Get Started</button>
+          <div className="ctrls">
+            <button> Get it on Chrome</button>
+            <button> Get it on Firefox</button>
+          </div>
         </div>
       </div>
     </div>

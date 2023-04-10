@@ -1,0 +1,89 @@
+.faqs {
+  margin-top: 2em;
+
+  &-title {
+    padding: 1.5em 0;
+    margin-bottom: 1em;
+    @include flexProps($dir: column, $gap: 2em);
+    text-align: center;
+    p {
+      color: $grayish-blue;
+      // padding: 1em;
+      width: 75%;
+      margin: auto;
+      line-height: 1.8em;
+    }
+    h2 {
+      color: $dark-blue;
+      letter-spacing: 0.08em;
+      font-weight: 500;
+    }
+  }
+
+  .faq {
+    .header {
+      @include flexProps($jsfy: space-between);
+      width: 100%;
+      padding: 1em 0;
+
+      position: relative;
+      // if the faq is active
+      .active-faq {
+        transform: rotate(180deg);
+        svg path {
+          stroke: $soft-red;
+        }
+      }
+
+      .icon-wrapper {
+        width: 25px;
+        height: 20px;
+        cursor: pointer;
+        transition: transform 0.3s;
+        &:hover {
+          transform: rotate(180deg);
+          color: $soft-red;
+        }
+        //  svg path {
+        // }
+      }
+      p {
+        &:hover {
+          color: $soft-red;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .content {
+      color: $grayish-blue;
+      padding: 1.5em 1em;
+      display: none;
+      @include text-configs;
+      transition: 0.3s;
+    }
+
+    // if the faq is active
+
+    .active-content {
+      display: block;
+    }
+  }
+
+  &-wrapper {
+    @include flexProps($dir: column, $jsfy: center, $gap: 1em);
+    max-width: 400px;
+    margin: auto;
+
+    @include md {
+      max-width: 600px;
+    }
+  }
+
+  .btn {
+    margin: auto;
+    max-width: 200px;
+    padding: 2em 0;
+  }
+  @include custom-button($color: $soft-blue, $transform: initial);
+}

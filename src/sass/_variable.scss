@@ -4,10 +4,18 @@ $maxWidth: 1200px;
 $fontSize: 18px;
 
 // colors
-$grayish-blue: hsl(233, 8%, 62%);
+$soft-blue: hsl(231, 69%, 60%);
+$grayish-blue: hsl(229, 8%, 60%);
+$soft-red: hsl(0, 94%, 66%);
+$dark-blue: hsl(228, 39%, 23%);
+$white: hsl(0, 0%, 100%);
+$very-dark-blue: hsl(229, 31%, 21%);
+
+
 $light-grayish: hsl(220, 16%, 96%);
 $very-light-gray: hsl(0, 0%, 98%);
-$white: hsl(0, 0%, 100%);
+
+
 // $dark-blue: hsl(233, 26%, 24%);
 $lime-green: hsl(136, 65%, 51%);
 $bright-cyan: hsl(192, 70%, 51%);
@@ -16,11 +24,10 @@ $bright-cyan: hsl(192, 70%, 51%);
 
 //primary colors
 $bright-red: hsl(12, 88%, 59%);
-$dark-blue: hsl(228, 39%, 23%);
+
 
 //others
 $dark-grayish-blue: hsl(227, 12%, 61%);
-$very-dark-blue: hsl(233, 12%, 13%);
 $very-pale-red: hsl(13, 100%, 96%);
 $very-light-gray: hsl(0, 0%, 98%);
 

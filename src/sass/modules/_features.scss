@@ -1,0 +1,179 @@
+.features {
+  text-align: center;
+
+  p {
+    color: $grayish-blue;
+    line-height: 1.5em;
+    @include text-configs;
+    max-width: 400px;
+    margin: auto;
+    @include sm {
+      max-width: 500px;
+    }
+  }
+
+  h2 {
+    color: $dark-blue;
+    margin-bottom: 0.5em;
+  }
+
+  .header {
+    text-align: center;
+    padding: 1em 0;
+    margin-bottom: 1em;
+
+    @include md {
+      p {
+        max-width: 600px;
+      }
+    }
+  }
+  // end of the header
+
+  .tab {
+    padding: 1em;
+    position: relative;
+    .content {
+      padding: 3em 1em;
+    }
+
+    @include custom-button($color: $soft-blue);
+    button {
+      margin-top: 1em;
+    }
+
+    .img-wrapper {
+      // @extend
+      max-width: 400px;
+      margin: auto;
+      object-fit: contain;
+      height: 100%;
+      // max-height: 400px;
+
+      @include md {
+        max-width: initial;
+        flex-basis: 60%;
+      }
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 15rem;
+        background-color: $soft-blue;
+        border-radius: 10rem;
+        z-index: -999;
+        @include positionElem($pos: absolute, $left: -10rem, $top: 10rem);
+
+        @include md {
+          height: 15rem;
+          width: 100vw;
+          @include positionElem($pos: absolute, $left: -35rem, $top: 10rem);
+        }
+
+        @include lg {
+          height: 18rem;
+          width: 100vw;
+          @include positionElem($pos: absolute, $left: -120%, $top: 10rem);
+        }
+      }
+
+      @include sm {
+        padding: 2em;
+        max-width: none;
+        width: 80%;
+        // height: 80%;
+      }
+    }
+    //  end of the img-wrapper
+
+    // .tab @md
+    @include md {
+      padding: 0;
+      @include flexProps(
+        $dir: row,
+        $jsfy: space-around,
+        $algn: center,
+        $gap: 3em
+      );
+    }
+  }
+
+  .ctrls {
+    max-width: 400px;
+    margin: auto;
+    position: relative;
+    li {
+      padding: 1em;
+      text-align: center;
+      position: relative;
+      color: $dark-blue;
+      cursor: pointer;
+      transition: height 0.3s;
+      &:hover {
+        color: $soft-red;
+      }
+
+      // li @md
+    }
+
+    li.active {
+      &::after {
+        content: "";
+        width: 40%;
+        height: 4px;
+        background: $soft-red;
+        transition: height 0.3s, width 0.3s;
+        @include positionElem(
+          $pos: absolute,
+          $bottom: -0.1em,
+          $left: 30%,
+          $right: 30%
+        );
+        // @include flexProps($jsfy: center);
+
+        @include md {
+          width: 100%;
+          left: 0%;
+        }
+      }
+    }
+
+    ul {
+      padding-bottom: 2.5em;
+
+      @include md {
+        @include flexProps($jsfy: space-between);
+      }
+    }
+
+    // ctrls @md
+    @include md {
+      max-width: 800px;
+      // border: 1px solid purple;
+      hr {
+        display: none;
+      }
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: lightgray;
+        z-index: -999;
+        @include positionElem($pos: absolute, $bottom: 2.8rem);
+      }
+    }
+  }
+  // end of .ctrls
+
+  // features @md
+  @include md {
+    text-align: initial;
+    .content {
+      @include flexProps($dir: column, $gap: 1em);
+      button {
+        align-self: start;
+      }
+    }
+  }
+}

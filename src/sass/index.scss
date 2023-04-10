@@ -2,9 +2,10 @@
 
 @import "./utils/breakpoints";
 
+@import "./base/reset";
+
 @import "./utilities";
 
-@import "./base/reset";
 
 // layouts
 @import './layouts/headear';
@@ -15,8 +16,10 @@
 
 @import "./modules/showcase";
 
-@import "./modules/reviews";
+@import "./modules/faq";
 
-@import "./modules/tips";
+@import "./modules/browsers";
 
 @import "./modules/footer";
+
+@import "./modules/features";

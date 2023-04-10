@@ -1,51 +1,48 @@
 .show-case {
-  background-color: $bright-red;
+  background-color: $soft-blue;
   color: $white;
 
-  background-image: url("../../manage/images/bg-simplify-section-mobile.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: left 1em;
-
-  div {
-    padding: 3em;
+  .content {
+    padding: 2em 0;
     text-align: center;
-    @include flexProps($dir: column, $gap: 2em);
+    @include flexProps($dir: column, $algn: center, $gap: 1.5em);
     p {
-      font-size: 3.5rem;
-      font-weight: 700;
-
-      @include md {
-        font-size: 3rem;
-        width: 50%;
-      }
+      text-transform: uppercase;
     }
 
-    button {
-      display: inline-block;
+    h2 {
+      width: 70%;
+      text-align: center;
+    }
+    // for the buttons
+    @include custom-button($color: $soft-red);
+
+    .ctrls {
+      @include flexProps($wrap: no-wrap, $gap: 1em, $dir: column);
+      align-self: flex-start;
+      width: 100%;
+      max-width: 50%;
       margin: auto;
-      width: 200px;
-      padding: 1em;
-      font-size: 18px;
-      background: $white;
-      color: $bright-red;
-      transition: color, background 0.3s;
-      &:hover {
-        color: $white;
-        background-color: $bright-red;
+      input {
+        padding: 1em 0.5em;
+        @include md {
+          flex: 1;
+        }
       }
+
       @include md {
-        align-self: center;
-        margin: initial;
+        max-width: initial;
+        @include flexProps($wrap: no-wrap, $gap: 2em);
       }
     }
-
     @include md {
       width: 100%;
-
+      max-width: 550px;
+      border: 1px solid coral;
+      margin: auto;
       text-align: initial;
-      padding: 2em 0;
-      @include flexProps($jsfy: space-between, $algn: center);
+      // padding: 2em 0;
+      // @include flexProps($jsfy: space-between, $algn: center);
     }
   }
   // end of the containing div styles

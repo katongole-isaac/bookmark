@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
 
 * {
   box-sizing: border-box;
@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: "Public Sans", sans-serif;
+  font-family: "Rubik", sans-serif;
   overflow-x: hidden;
   font-size: $fontSize;
 }
@@ -31,25 +31,20 @@ ul {
 }
 
 button {
-  cursor: pointer;
-  background-color: $bright-red;
+  cursor: pointer;  
+  background-color: $soft-blue;
   border: none;
   color: $white;
-  padding: 1.2em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 1.5em;
   font-weight: 700;
-  width: 150px;
+  min-width: 120px;
+  max-width: auto;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border-radius: 150px;
-  &:hover {
-    background-color: darken($color: $bright-red, $amount: 5%);
-  }
+  border-radius: 8px;
 }
 
 input {
-  padding: 1em;
-  border-radius: 150px;
-  min-width: 200px;
-  border: none;
-  outline: none;
   color: $dark-blue;
 }

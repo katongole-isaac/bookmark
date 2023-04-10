@@ -1,52 +1,78 @@
-import React, { useState } from "react";
-import EasyBankLogo from "../manage/images/logo.svg";
-import HamburgerIcon from "../manage/images/icon-hamburger.svg";
-import CloseIcon from "../manage/images/icon-close.svg";
+import React, { useEffect, useRef, useState } from "react";
+import BookmarkLogo from "../bookmark/images/logo-bookmark-copy.svg";
+import HamburgerIcon from "../bookmark/images/icon-hamburger.svg";
+import CloseIcon from "../bookmark/images/icon-close.svg";
+
+import fbIcon from "../bookmark/images/icon-facebook.svg";
+
+import twitterIcon from "../bookmark/images/icon-twitter.svg";
 
 export default function Navbar() {
   const [showBtn, setshowBtn] = useState(false);
+  const inputRef = useRef();
+  const navRef = useRef();
 
-  // showing & hiding the navbar on scroll.
+  const handleNavClose = () => {
+    if (inputRef.current.checked) navRef.current.style.top = "100%";
+  };
 
   return (
     <>
-      <nav className="nav">
+      <nav className="nav" ref={navRef}>
         <div className="container nav-bar ">
           <div className="brand">
             <a href="#">
-              <img src={EasyBankLogo} alt="easybank-logo" />
+              <img src={BookmarkLogo} alt="bookmark-logo" />
             </a>
+            <div className="img-wrapper">
+              <label htmlFor="chck">
+                <img
+                  src={CloseIcon}
+                  alt="hamburger.svg"
+                  id="open"
+                  role="button"
+                  onClick={handleNavClose}
+                />
+              </label>
+            </div>
           </div>
 
-          <input type="checkbox" name="navigation" id="chck" hidden />
-          <ul className="nav-links">
-            <li>
-              <a href="#">Pricing</a>
-            </li>
-            <li>
-              <a href="#">Product</a>
-            </li>
-            <li>
-              <a href="#">AboutUs</a>
-            </li>
-            <li>
-              <a href="#">Careers</a>
-            </li>
-            <li>
-              <a href="#">Community</a>
-            </li>
-          </ul>
+          <input
+            ref={inputRef}
+            type="checkbox"
+            name="navigation"
+            id="chck"
+            hidden
+          />
 
-          <div className="actions">
-            <label htmlFor="chck" onClick={() => setshowBtn((prev) => !prev)}>
-              {!showBtn ? (
-                <img src={HamburgerIcon} alt="hamburger.svg" />
-              ) : (
-                <img src={CloseIcon} alt="hamburger.svg" id="open" />
-              )}
-            </label>
+          <div className="nav-links">
+            <ul>
+              <hr />
+              <li>
+                <a href="#">FEATURES</a>
+              </li>
+              <hr />
+              <li>
+                <a href="#">PRICING</a>
+              </li>
+              <hr />
+
+              <li>
+                <a href="#">CONTACT</a>
+              </li>
+              <hr />
+            </ul>
+            <button className="btn">login</button>
           </div>
-          <button className="btn">Get Started</button>
+
+          <div className="social">
+            <div className="img-wrapper">
+              <img src={fbIcon} alt="facebook-icon" />
+            </div>
+            <div className="img-wrapper">
+              <img src={twitterIcon} alt="twitter-icon" />
+            </div>
+          </div>
         </div>
       </nav>
     </>

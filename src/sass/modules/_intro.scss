@@ -1,10 +1,45 @@
 .intro-wrapper {
+  padding: 2em 0;
+
   .illustration {
     width: 100%;
     padding: 1em;
-
     @include md {
-      width: auto;
+      @include flexProps();
+
+      img {
+        object-fit: fill;
+      }
+      flex-basis: 45%;
+    }
+
+    @include lg {
+      flex-grow: 1;
+      flex-basis: 60%;
+      img {
+        object-fit: none;
+        width: auto;
+      }
+      padding: 0;
+    }
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 20rem;
+      border: 1px solid coral;
+      background-color: $soft-blue;
+      border-radius: 20rem;
+      z-index: -999;
+      @include positionElem($pos: absolute, $right: -12rem, $top: 5rem);
+
+      @include md {
+        @include positionElem($pos: absolute, $right: -30rem, $top: 10rem);
+      }
+
+      @include lg {
+        @include positionElem($pos: absolute, $right: -60rem, $top: 10rem);
+      }
     }
   }
 
@@ -14,39 +49,29 @@
     padding: 4em 1em;
     h1 {
       color: $dark-blue;
-      font-size: 3rem;
+      font-size: 2.5rem;
     }
     p {
       color: $grayish-blue;
       @include text-configs;
       font-size: 20px;
-    }
-
-    &::after {
-      content: "";
-      height: 50rem;
-      width: 100%;
-      z-index: -2222;
-
-      background-image: url("../../manage/images/bg-tablet-pattern.svg");
-      background-size: contain;
-      background-repeat: no-repeat;
-      @include positionElem($pos: absolute, $top: 30rem, $left: 60%);
+      width: 65%;
 
       @include md {
-        display: none;
+        width: 100%;
       }
     }
 
+    // .intro-content @md
+
     @include md {
       text-align: initial;
-      flex-basis: 60%;
+      flex-basis: 55%;
       @include flexProps($dir: column, $gap: 2em, $algn: initial);
     }
 
     @include lg {
-      flex-basis: 40%;
-      margin-right: auto;
+      flex-basis: 60%;
     }
   }
 
@@ -54,6 +79,21 @@
   .intro {
     @include md {
       @include flexProps($dir: row-reverse);
+    }
+  }
+
+  .ctrls {
+    margin-top: 1em;
+    @include flexProps($gap: 2em, $jsfy: center);
+
+    @include custom-button($color: $soft-blue);
+    button:nth-child(n + 2) {
+      background-color: #fafafa;
+      color: $dark-blue;
+    }
+
+    @include lg {
+      @include flexProps($gap: 2em, $jsfy: initial);
     }
   }
 }

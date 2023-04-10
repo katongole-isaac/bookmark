@@ -4,10 +4,13 @@ export default function Showcase() {
   return (
     <div className="show-case">
       <div className="container ">
-        <div>
-          <p>Simplify how your team works today.</p>
-
-          <button> Get Started</button>
+        <div className="content">
+          <p> 35,000+ already joined</p>
+          <h2>Stay up-to-date with what we're doing</h2>
+          <div className="ctrls">
+            <input type="text" placeholder="updates in your inbox" />
+            <button> Contact Us</button>
+          </div>
         </div>
       </div>
     </div>

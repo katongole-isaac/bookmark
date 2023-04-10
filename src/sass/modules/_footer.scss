@@ -14,6 +14,14 @@
   padding: 2em 0;
   color: $grayish-blue;
 
+  .social {
+    margin-top: 1em;
+    @include flexProps($gap: 2em);
+    @include md {
+      margin-top: initial;
+    }
+  }
+
   a {
     transition: all 0.2s;
     color: $white;
@@ -45,12 +53,14 @@
 
     ul {
       @include custom-flex;
+      @include md {
+        @include flexProps($gap: 1em);
+      }
     }
 
     // social media icons
     .icons {
       @include custom-flex($gap: 1em);
-
       @include lg {
         gap: 3em;
       }
@@ -60,8 +70,10 @@
         gap: 1em;
       }
     }
+  }
 
-    svg {
+
+  svg {
       cursor: pointer;
       path {
         &:hover {
@@ -69,13 +81,10 @@
         }
       }
     }
-  }
 
   & > div:last-child {
-
     .ctrls {
-    @include custom-flex($dir: row);
-
+      @include custom-flex($dir: row);
     }
     button {
       width: auto;

@@ -1,0 +1,87 @@
+@mixin browser-onlg-margin() {
+  @for $margin from 1 through 2 {
+    @if $margin == 1 {
+      &:nth-child(2) {
+        top: #{$margin + 2}em;
+      }
+    } @else {
+      &:nth-child(n + 3) {
+        top: #{$margin + 3}em;
+      }
+    }
+  }
+}
+
+.browsers {
+  // padding: 2em;
+
+  .header {
+    text-align: center;
+    padding: 2em;
+    margin: auto;
+    max-width: 500px;
+    p {
+      color: $grayish-blue;
+      line-height: 1.8em;
+      width: 90%;
+      // @include
+    }
+    h1 {
+      color: $dark-blue;
+      margin-bottom: 0.5em;
+    }
+
+    @include md {
+      max-width: 800px;
+    }
+  }
+
+  .browser {
+    @include custom-button($color: $soft-blue);
+    @include flexProps($dir: column, $gap: 2em, $algn: center);
+    padding: 2em;
+    max-width: 350px;
+    min-width: 300px;
+    margin: auto;
+    margin-top: 1.5em;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    @include positionElem;
+    .icon {
+      width: 150px;
+      height: 150px;
+      padding: 1em;
+    }
+
+    .description {
+      @include flexProps($dir: column, $gap: 0.5em);
+
+      p {
+        color: $grayish-blue;
+      }
+      h2 {
+        color: $dark-blue;
+      }
+    }
+
+    .actions {
+      // border: 10px dotted grey;
+    }
+
+    @include md {
+      margin: initial;
+    }
+    @include lg {
+      @include browser-onlg-margin();
+    }
+  }
+
+  &-wrapper {
+    @include md {
+      @include flexProps($dir: row, $gap: 1em, $jsfy: center, $wrap: wrap);
+    }
+  }
+
+  @include lg {
+    margin-bottom: 8rem;
+  }
+}

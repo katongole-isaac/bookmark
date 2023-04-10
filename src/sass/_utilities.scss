@@ -33,3 +33,17 @@
   line-height: $lineH;
   word-spacing: $wd-space;
 }
+
+@mixin custom-button($color, $bg-hover: transparent, $transform: uppercase) {
+  button {
+    text-transform: $transform;
+    // color: $color;
+    &:hover {
+      color: $color;
+      border: 1px solid $color;
+      background-color: transparent;
+    }
+  }
+}
+
+

@@ -2,105 +2,148 @@
   display: flex;
 }
 
+@mixin img-wrapper($w: 0px, $h: 0) {
+  .img-wrapper {
+    width: $w;
+    height: $h;
+  }
+}
+
 .nav {
-  // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  // position: sticky;
-  // top: 0;
-  background-color: transparent;
-  // z-index: 100;
-  transition: top 0.5s;
-  .nav-bar {
-    @include flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 70px;
-    padding: 5px;
+  // img {}
 
-    // .nav-links,
-    .btn {
+  @include positionElem($pos: fixed);
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 2em;
+  background-color: hsl(226, 90%, 12%, 0.8);
+  transition: top left 0.3s;
+
+  hr {
+    border: 0.5px solid rgb(173, 170, 170);
+
+    @include md {
       display: none;
-      @include md {
-        display: inline-block;
-      }
+    }
+  }
+
+  .brand {
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+    // border: 2px solid purple;
+
+    padding: 1em 0;
+    @include flexProps($jsfy: space-between);
+
+    a > img {
+      width: auto;
     }
 
-    .nav-links {
-      padding: 2em 0;
-      position: absolute;
-      // max-width: 200px;
-      width: 350px;
-      margin: auto;
-      top: -1000em;
-      left: 20%;
-      background-color: $white;
-      @include flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transition: top 0.5s;
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
-      @include md {
-        position: relative;
-        margin: initial;
-        background: none;
-        z-index: initial;
-        box-shadow: none;
-        top: auto;
-        left: auto;
-        width: auto;
-        flex-direction: row;
-        padding: 0;
-      }
+    img {
+      cursor: pointer;
     }
 
-    input#chck:checked ~ .nav-links {
-      top: 75px;
+    .img-wrapper {
+      align-self: center;
+      @include img-wrapper($w: 20px, $h: 20px);
     }
+  }
 
-    ul {
-      @include flex;
-      gap: 1.5em;
+  input {
+    @include positionElem($pos: absolute);
+  }
 
-      @include md {
-        gap: 1em ;
-      }
+  // hiding | showing .social media
+  input:checked ~ .social {
+    display: flex;
+  }
 
-      a {
-        color: $grayish-blue;
-        position: relative;
+  .nav-links {
+    text-align: center;
+    margin: auto;
+    max-width: 350px;
+    padding: 1.5em 0;
+    @include flexProps($dir: column, $gap: 1em);
 
-        // hover effect
-
-        &:hover {
-          color: $bright-red;
-        }
-      }
-    }
-    // end of ul styles
-
-    .actions {
-      img {
-        cursor: pointer;
-      }
-
-      label[for="chck"] {
-        img {
-          width: 20px;
-          height: 20px;
-        }
-        padding: 0.6em;
-
-        .icon-wrapper {
-          width: 30px;
-          height: 30px;
-        }
+    a {
+      color: $white;
+      letter-spacing: 0.1em;
+      &:hover {
+        color: $soft-blue;
 
         @include md {
-          display: none;
+          color: $soft-red;
         }
       }
+
+      @include md {
+        color: $dark-blue;
+      }
+    }
+
+    ul li {
+      padding: 1em 0;
+      transition: font-size 0.2s;
+      &:hover {
+        font-size: 19px;
+      }
+    }
+
+    button {
+      background: transparent;
+      border: 2px solid $white;
+      letter-spacing: 0.2em;
+      font-size: 1rem;
+
+      &:hover {
+        background: $soft-blue;
+        border: none;
+      }
+    }
+
+    // buttons @md screen
+    @include md {
+      border: none;
+      font-size: initial;
+      @include custom-button($color: $soft-red);
+    }
+
+    @include md {
+      @include flexProps($gap: 1em, $jsfy: end, $algn: center);
+      border: 1px solid coral;
+      max-width: initial;
+      padding: initial;
+      flex: 1;
+      ul {
+        @include flexProps($gap: 1em);
+      }
+    }
+  }
+
+  .social {
+    @include flexProps($gap: 2em, $jsfy: center);
+    width: 100%;
+    padding: 1em;
+    @include img-wrapper($w: auto, $h: 30px);
+    @include positionElem($pos: fixed, $bottom: 2em);
+    display: none;
+  }
+
+  // .nav @md screen
+  @include md {
+    @include positionElem($pos: initial);
+    overflow: initial;
+    width: 100%;
+    height: auto;
+    padding-top: 2em;
+    background-color: transparent;
+    transition: top left 0.3s;
+  }
+  .nav-bar {
+    @include md {
+      @include flexProps($jsfy: space-between);
     }
   }
 }
