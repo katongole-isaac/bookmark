@@ -41,7 +41,7 @@ export default function Footer() {
           <small>
             Made with 💓 by{" "}
             <b>
-              <a href="https://github.com/katongole-isaac/manage-landing">
+              <a href="https://github.com/katongole-isaac/bookmark">
                 isaac-Repository
               </a>
             </b>
