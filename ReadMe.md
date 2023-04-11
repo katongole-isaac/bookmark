@@ -7,33 +7,39 @@ The landing page is available [here](https://katongole-isaac.github.io/easybank/
 
 </div>
 
-<center >  <h2> Manage landing page </h2> </center>
+<center >  <h2> Bookmark landing page </h2> </center>
 
-> _This is a solution to this challenge found on [frontendmentor.io](https://www.frontendmentor.io/challenges/manage-landing-page-SLXqC6P5 "frontend mentor")_.
+> _This is a solution to this challenge found on [frontendmentor.io](https://www.frontendmentor.io/challenges/bookmark-landing-page-5d0b588a9edda32581d29158/hub "frontend mentor")_.
 
 **Table of contents**
 
 - [overview](#overview)
 - [Tools](#tools)
+- [Difficulty](#difficulty)
 - [Author](#author)
 
-**overview**
+**Overview**
 
-- This is was a simple project that mainly focused on how to deal with layouts on different screens. I found _background-image positioning_ kinda challenging about i managed to deal with it.
+- This is a simple landing page challenge at frontend mentor. The objective was tp develop a landing page given the design templates. The challenge can be found at [frontendmentor.io](https://www.frontendmentor.io/challenges/bookmark-landing-page-5d0b588a9edda32581d29158/hub "frontend mentor")
 
-## **Tools**
+ **Tools**
 
 - [Reactjs](https://reactjs.org/ "Reactjs") - Frontend library
 - [Sass/Scss](https://sass-lang.com/ "Sass") - Css precompiler
 - [Webpack](https://webpack.js.org/ "Webpack") - Module Bundler
-- [JavaScript](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics "Javascript") - Language used to build interactive webpages
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics "Javascript") - Language used to 
+build interactive webpages
 
-## **What I learnt**
+**Difficulty**
+
+It was a little bit hard to design navigations on both large and small screens. It really took me some good time to design it in a way i wanted it to be. But  serious concentration i made what i intended to do.
+
+ **What I learnt**
 
 - How to control media queries in javascript. i used [window.matchMedia(...)](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia "window.matchMedia")
 - How to conditionally render elements based on different screeen sizes.
 
-## **Author**
+ **Author**
 
 - [LinkedIn](https://www.linkedin.com/in/katongole-isaac-7a22aa178/ "LinkedIn")
 - [Gmail](mailto:katongolelsaac78@gmail.com, "Gmail")

@@ -10,7 +10,7 @@
     "deploy": "gh-pages -d dist"
   },
   "keywords": [],
-  "homepage": "https://katongole-isaac.github.io/easybank",
+  "homepage": "https://katongole-isaac.github.io/bookmark",
   "author": "",
   "license": "ISC",
   "devDependencies": {
