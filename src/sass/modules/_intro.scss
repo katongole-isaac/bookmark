@@ -27,18 +27,17 @@
       content: "";
       width: 100%;
       height: 20rem;
-      border: 1px solid coral;
       background-color: $soft-blue;
       border-radius: 20rem;
       z-index: -999;
       @include positionElem($pos: absolute, $right: -12rem, $top: 5rem);
 
       @include md {
-        @include positionElem($pos: absolute, $right: -30rem, $top: 10rem);
+        @include positionElem($pos: absolute, $right: -30rem, $top: 15rem);
       }
 
       @include lg {
-        @include positionElem($pos: absolute, $right: -60rem, $top: 10rem);
+        @include positionElem($pos: absolute, $right: -60rem, $top: 20rem);
       }
     }
   }

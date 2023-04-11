@@ -15,7 +15,13 @@
       text-align: center;
     }
     // for the buttons
-    @include custom-button($color: $soft-red);
+    @include custom-button($color: $soft-red, $transform: initial);
+    button {
+      background: $soft-red;
+      &:hover {
+        color: $white;
+      }
+    }
 
     .ctrls {
       @include flexProps($wrap: no-wrap, $gap: 1em, $dir: column);
@@ -38,11 +44,8 @@
     @include md {
       width: 100%;
       max-width: 550px;
-      border: 1px solid coral;
       margin: auto;
       text-align: initial;
-      // padding: 2em 0;
-      // @include flexProps($jsfy: space-between, $algn: center);
     }
   }
   // end of the containing div styles

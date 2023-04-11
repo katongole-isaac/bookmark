@@ -12,7 +12,7 @@ export default function () {
   return (
     <>
       <header>
-        {/* <Navbar /> */}
+        <Navbar />
         <Intro />
       </header>
       <main>
